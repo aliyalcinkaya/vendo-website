@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendo Integrations Flow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f4f6;
+            margin: 0;
+        }
+
+        .integration-flow {
+            position: relative;
+            width: 80%;
+            max-width: 1000px;
+        }
+
+        .source, .target, .vendo {
+            position: absolute;
+            text-align: center;
+        }
+
+        .source {
+            top: 0;
+        }
+
+        .vendo {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .target {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .source img, .target img, .vendo img {
+            max-width: 100px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .arrow {
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background-color: #999;
+            transform-origin: top center;
+        }
+
+        .arrow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 20px solid #999;
+            transform: translateX(-50%);
+        }
+
+        /* Example positions */
+        .source:nth-child(1) { left: 10%; }
+        .source:nth-child(2) { left: 30%; }
+        .source:nth-child(3) { left: 50%; }
+        .source:nth-child(4) { left: 70%; }
+        .source:nth-child(5) { left: 90%; }
+
+        /* Arrows for each source */
+        .arrow:nth-child(2) { top: 100px; left: 10%; height: 150px; }
+        .arrow:nth-child(4) { top: 100px; left: 30%; height: 150px; }
+        .arrow:nth-child(6) { top: 100px; left: 50%; height: 150px; }
+        .arrow:nth-child(8) { top: 100px; left: 70%; height: 150px; }
+        .arrow:nth-child(10) { top: 100px; left: 90%; height: 150px; }
+
+        /* Arrow from Vendo to Mixpanel */
+        .arrow.vendo-to-target {
+            top: 50%;
+            left: 50%;
+            height: 200px;
+            transform: translateX(-50%);
+        }
+
+        .arrow.vendo-to-target::before {
+            top: 100%;
+        }
+
+        /* Animation */
+        .arrow::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background-color: #3b82f6;
+            transform: scaleY(0);
+            transform-origin: top;
+            animation: flow 2s infinite;
+        }
+
+        @keyframes flow {
+            0% { transform: scaleY(0); }
+            50% { transform: scaleY(1); }
+            100% { transform: scaleY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="integration-flow">
+        <!-- Sources -->
+        <div class="source"><img src="source1.png" alt="Source 1"></div>
+        <div class="source"><img src="source2.png" alt="Source 2"></div>
+        <div class="source"><img src="source3.png" alt="Source 3"></div>
+        <div class="source"><img src="source4.png" alt="Source 4"></div>
+        <div class="source"><img src="source5.png" alt="Source 5"></div>
+
+        <!-- Vendo -->
+        <div class="vendo"><img src="vendo.png" alt="Vendo"></div>
+
+        <!-- Target (Mixpanel) -->
+        <div class="target"><img src="mixpanel.png" alt="Mixpanel"></div>
+
+        <!-- Arrows -->
+        <div class="arrow"></div>
+        <div class="arrow"></div>
+        <div class="arrow"></div>
+        <div class="arrow"></div>
+        <div class="arrow"></div>
+
+        <!-- Arrow from Vendo to Mixpanel -->
+        <div class="arrow vendo-to-target"></div>
+    </div>
+</body>
+</html>
