@@ -280,22 +280,35 @@
     </div>
   </section>
 
+<!-- Integrations -->
+<div class="bg-slate-900 px-6 py-24 sm:py-32 lg:px-8 relative overflow-hidden">
+  <div class="absolute inset-0 bg-image-animation" style="background-image: url('assets/Vendo Integration Overview.png'); background-size: 1200px 551px; opacity: 0.02;"></div>
+  <div class="relative z-10 mx-auto max-w-2xl text-center">
+    <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Integrations</h2>
+    <p class="mt-6 text-lg leading-8 text-gray-300">Send any data to Mixpanel. Stop building and maintaining
+      pipelines; unlock your data in minutes.</p>
 
-
-
-  <!-- Integrations -->
-  <div class="bg-slate-900 px-6 py-24 sm:py-32 lg:px-8">
-    <div class="mx-auto max-w-2xl text-center">
-      <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Integrations</h2>
-      <p class="mt-6 text-lg leading-8 text-gray-300">Send any data to Mixpanel. Stop building and maintaining
-        pipelines; unlock your data in minutes.</p>
-
-      <div class="mt-10 flex items-center justify-center gap-x-6">
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-300">See Integrations <span
-            aria-hidden="true">→</span></a>
-      </div>
+    <div class="mt-10 flex items-center justify-center gap-x-6">
+      <a href="#" class="text-sm font-semibold leading-6 text-gray-300">See Integrations <span
+          aria-hidden="true">→</span></a>
     </div>
   </div>
+</div>
+
+<style>
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1200px 0;
+  }
+}
+
+.bg-image-animation {
+  animation: moveBackground 240s linear infinite;
+}
+</style>
 
   <!-- Meet the team-->
   <div class="bg-white py-24 sm:py-32">
